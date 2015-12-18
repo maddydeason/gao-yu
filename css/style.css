@@ -1,0 +1,329 @@
+/* --- GLOBAL --- */
+
+body {
+  width: 100%;
+  *zoom: 1;
+  display: block;
+  margin: 0;
+  color: #212121;
+  font-weight: 200;
+}
+
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+
+body:after {
+  clear: both;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+a {
+  color: #DE2910;
+  text-decoration: none;
+  padding: 5px;
+}
+a:hover {
+  background: #FFDE00;
+  -webkit-transition: ease .5s;
+  -moz-transition: ease .5s;
+  transition: ease .5s;
+}
+
+p,
+blockquote {
+  line-height: 1.8rem;
+  font-family: 'Merriweather', serif;
+}
+
+p {
+  margin: 0 0 2rem;
+}
+
+blockquote {
+  border-left: 1px solid #DE2910;
+  margin: 0 0 1rem;
+  padding: 0 0 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h1, h2, h5, blockquote {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+iframe {
+  margin-bottom: 2rem;
+}
+
+/* --- HEADER ZOOM --- */
+
+.contained {
+  margin: 0 auto;
+}
+
+main {
+  padding: 1rem 0;
+  position: relative;
+  background: #efefef;
+  box-shadow: 0px -10px 60px rgba(0, 0, 0, 0.25);
+}
+
+header.zoom-me {
+  overflow: hidden;
+  padding-bottom: 55%;
+}
+
+@media (min-width: 600px) {
+  header.zoom-me {
+    padding-bottom: 50%;
+  }
+}
+
+@media (min-width: 700px) {
+  header.zoom-me {
+    padding-bottom: 45%;
+  }
+}
+
+header.zoom-me img {
+  width: 100%;
+  max-width: none;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+/* --- SUBHEAD STICKY --- */
+
+.canvas {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2rem 0;
+}
+
+.page-header {
+  padding: 2rem 0 1rem;
+  margin: 0 0 4rem;
+  text-align: center;
+  border-bottom: 1px solid #DE2910;
+}
+
+.page-header h1 {
+  margin: 0;
+  padding: 0 0 0.2rem;
+  display: inline-block;
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+}
+.page-header h5 {
+  font-weight: 300;
+  line-height: 1.2rem;
+}
+
+.page-header .summary {
+  letter-spacing: 0.2rem;
+  color: #212121;
+}
+
+article {
+  margin: 0 0 4rem;
+  padding: 0 0 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+article:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30em;
+  left: 50%;
+  font-size: 1rem;
+  border-bottom: 1px solid #DE2910;
+  margin-left: -15rem;
+  bottom: 0;
+  z-index: 1;
+}
+
+article:before {
+  display: block;
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  left: 50%;
+  width: 1.6rem;
+  height: 1.5rem;
+  padding: 0.1rem 0 0;
+  margin: -0.8rem 0 0 -0.8rem;
+  border-radius: 50%;
+  border: 1px solid #DE2910;
+  background: #efefef;
+  z-index: 2;
+}
+
+article:last-child:after,
+article:last-child:before {
+  display: none;
+}
+
+@media screen and (min-width: 40rem) {
+  .sticky .stick {
+    position: fixed;
+    top: 0;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    opacity: 1;
+    width: calc(45% - 5em);
+  }
+  .sticky.hide .stick {
+    opacity: 0;
+  }
+  article {
+    position: relative;
+  }
+  article {
+    display: table;
+  }
+  article .content,
+  article header {
+    display: table-cell;
+    vertical-align: top;
+  }
+  article .content h2,
+  article header h2 {
+    margin: 0 0 0.4rem;
+    font-weight: 700;
+  }
+  article .content {
+    font-size: 1rem;
+  }
+  article header {
+    width: 45%;
+    padding-right: 2rem;
+  }
+}
+
+/* --- D3 CHART --- */
+.d3-data {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.bar {
+  fill: #DE2910;
+}
+
+.bar:hover {
+  fill: #AFAFAF;
+  -webkit-transition: ease .3s;
+  -moz-transition: ease .3s;
+  transition: ease .3s;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #212121;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+.x.axis {
+  font-size: 12px;
+}
+
+.d3-data h1,
+.d3-data p {
+  margin-top: 1rem;
+  margin-left: 20px;
+  width: 300px;
+  letter-spacing: .2px;
+  text-align: center;
+}
+.d3-data h1 {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+.d3-data p {
+  margin-top: -1rem;
+  font-size: .8rem;
+}
+
+.x-label,
+.y-label {
+  font-size: 12px;
+}
+
+
+/*-- TOOLTIP --*/
+
+.d3-tip {
+  font-family: "Roboto";
+  font-size: 10px;
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #efefef;
+  border-radius: 2px;
+  -webkit-transition: ease .3s;
+  -moz-transition: ease .3s;
+  transition: ease .3s;
+}
+
+
+/* Creates a small triangle extender for the tooltip */
+
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+  -webkit-transition: ease .3s;
+  -moz-transition: ease .3s;
+  transition: ease .3s;
+}
+
+/* Style northward tooltips differently */
+
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+.arc path {
+  stroke: #efefef;
+}
+
+.arc {
+  fill: #212121;
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  z-index: 99;
+}
+
+.path:hover {
+  opacity: .5;
+  -webkit-transition: ease .3s;
+  -moz-transition: ease .3s;
+  transition: ease .3s;
+}
